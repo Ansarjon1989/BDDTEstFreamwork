@@ -22,7 +22,7 @@ public class TestBase {
     }
 
     public static void validateCurrentURL(String expectedURL) {
-        Assert.assertEquals(driver.getCurrentUrl(), expectedURL);
+        Assert.assertEquals(driver.getCurrentUrl(),expectedURL);
     }
 
 

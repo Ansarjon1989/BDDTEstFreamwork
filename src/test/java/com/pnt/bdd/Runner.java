@@ -17,9 +17,9 @@ import java.util.List;
 
 @CucumberOptions(features = {"src/test/java/com/pnt/bdd/features/"},
         glue = {"com/pnt/bdd/stepdef"},
-        //tags = {"@Debug"},
+        //tags = {"@Login"},
         //monochrome = false, // display the console output in readable format
-        //strict = true,      // no declaration of any step , strict = false --> pass , true--> fail
+        //strict = false,      // no declaration of any step , strict = false --> pass , true--> fail
         //dryRun = false,     // checking if mapping is in place
         plugin = {"json:target/cucumber-reports/CucumberTestReport.json"})
 

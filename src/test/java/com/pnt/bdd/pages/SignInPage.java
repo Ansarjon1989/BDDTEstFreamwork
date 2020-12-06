@@ -10,12 +10,14 @@ public class SignInPage {
     @FindBy(xpath = "//img[@class='_97vu img']")
     private WebElement fbLogo;
 
-    public void validateFbLogoIsDisplayOnSignInPage() {
+    public void validateFbLogoIsDisplayedOnSignInPage() {
         Assert.assertTrue(fbLogo.isDisplayed());
-
     }
 
-    public void validateSignInPageURL(){
-        TestBase.validateCurrentURL("https://www.facebook.com/signin/");
+    public void validateSIgnInPageURL() {
+        TestBase.validateCurrentURL("https://www.facebook.com/signin");
     }
+
+
+
 }
