@@ -85,10 +85,9 @@ public class ApiPractice1 {
     }
 
 
-
     // /update/{id}	PUT	    JSON	http://dummy.restapiexample.com/api/v1/update/{id}	    Update an employee record Details
     @Test
-    public void updateARecord(){
+    public void updateARecord() {
         JSONObject js = new JSONObject();
         js.put("name", "Rahat");
         js.put("salary", 135000);
@@ -97,24 +96,24 @@ public class ApiPractice1 {
         System.out.println(js);
 
         Response response = RestAssured.given().contentType(ContentType.JSON).body(js.toString()).when()
-                .put(updateEndpoint+9670).then().assertThat().extract().response();
+                .put(updateEndpoint + 9670).then().assertThat().extract().response();
 
         System.out.println(response.asString());
         System.out.println(response.getStatusCode());
-        Assert.assertEquals(response.getStatusCode(),200);
+        Assert.assertEquals(response.getStatusCode(), 200);
 
     }
 
 
     //	/delete/{id}	DELETE	JSON	http://dummy.restapiexample.com/api/v1/delete/{id}	    Delete an employee record Details
     @Test
-    public void deleteARecord(){
+    public void deleteARecord() {
         Response response = RestAssured.given().contentType(ContentType.JSON).
-                delete(deleteEndpoint+441).then().assertThat().extract().response();
+                delete(deleteEndpoint + 441).then().assertThat().extract().response();
 
         System.out.println(response.asString());
         System.out.println(response.getStatusCode());
-        Assert.assertEquals(response.getStatusCode(),200);
+        Assert.assertEquals(response.getStatusCode(), 200);
     }
 
 }
