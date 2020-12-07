@@ -4,7 +4,7 @@ Feature: login functionality features
     Given user opens the browser and navigate to facebook.com
     When user see the facebook logo is displayed
 
-  @Login #@Login bu faqat shu test case run bolishini taminlaydi.
+   #@Login bu faqat shu test case run bolishini taminlaydi.
   Scenario Outline: user not being to login using invalid credentials
     Then user provides <username> and <password> in the desired field
     And user clicks on the login button
