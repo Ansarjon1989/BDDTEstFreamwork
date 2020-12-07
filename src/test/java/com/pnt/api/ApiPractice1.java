@@ -116,4 +116,23 @@ public class ApiPractice1 {
         Assert.assertEquals(response.getStatusCode(), 200);
     }
 
+    @Test
+    public void testJSONArray() {
+        JSONObject js1 = new JSONObject();
+        js1.put("name", "Rahat");
+        js1.put("salary", 135000);
+        js1.put("age", 30);
+
+        JSONObject js2 = new JSONObject();
+        js2.put("name", "Rahat");
+        js2.put("salary", 135000);
+        js2.put("age", 30);
+
+        JSONArray array = new JSONArray();
+        array.put(js1);
+        array.put(js2);
+
+        System.out.println(array);
+    }
+
 }
