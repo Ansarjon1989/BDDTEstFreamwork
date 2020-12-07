@@ -1,9 +1,11 @@
 package com.pnt.api;
 
 import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 
@@ -80,6 +82,39 @@ public class ApiPractice1 {
 
         // After you make a post call, always make a get call if you have the endpoint available or db call
         // to validate the data from the post call made it to db
+    }
+
+
+
+    // /update/{id}	PUT	    JSON	http://dummy.restapiexample.com/api/v1/update/{id}	    Update an employee record Details
+    @Test
+    public void updateARecord(){
+        JSONObject js = new JSONObject();
+        js.put("name", "Rahat");
+        js.put("salary", 135000);
+        js.put("age", 30);
+
+        System.out.println(js);
+
+        Response response = RestAssured.given().contentType(ContentType.JSON).body(js.toString()).when()
+                .put(updateEndpoint+9670).then().assertThat().extract().response();
+
+        System.out.println(response.asString());
+        System.out.println(response.getStatusCode());
+        Assert.assertEquals(response.getStatusCode(),200);
+
+    }
+
+
+    //	/delete/{id}	DELETE	JSON	http://dummy.restapiexample.com/api/v1/delete/{id}	    Delete an employee record Details
+    @Test
+    public void deleteARecord(){
+        Response response = RestAssured.given().contentType(ContentType.JSON).
+                delete(deleteEndpoint+441).then().assertThat().extract().response();
+
+        System.out.println(response.asString());
+        System.out.println(response.getStatusCode());
+        Assert.assertEquals(response.getStatusCode(),200);
     }
 
 }
